@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body class="bg-dark bg-opacity-10">
+    <section
+      class="login vh-100 d-flex justify-content-center align-items-center position-relative"
+    >
+      <div
+        class="container bg-white border shadow rounded-4 mx-3 overflow-hidden"
+      >
+        <div class="row h-100">
+          <div
+            class="col-md-6 d-flex justify-content-center py-3 align-items-center text-center"
+          >
+            <div class="text w-75">
+              <h1 class="fw-bold py-4">Sign Up </h1>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="name@example.com"
+                />
+                <label for="name">Enter Your Name</label>
+                <p
+                  id="nameMsg"
+                  class="text-danger msg alert alert-danger m-0 invalid-feedback"
+                >
+                  The name consists of 3 letters or more
+                </p>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="mail"
+                  placeholder="name@example.com"
+                />
+                <label for="mail">Enter Your Email</label>
+                <p
+                  id="mailMsg"
+                  class="text-danger msg alert alert-danger m-0 invalid-feedback"
+                >
+                  Enter Valid Email
+                </p>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pass"
+                  placeholder="name@example.com"
+                />
+                <label for="pass">Enter Your Password</label>
+                <p
+                  id="passMsg"
+                  class="text-danger msg alert alert-danger m-0 invalid-feedback"
+                >
+                  The password consists of 8 letters or numbers, provided that
+                  it begins with a capital letter
+                </p>
+              </div>
+              <p id="alertMsg" class="text-danger d-none">
+                All inputs is required
+              </p>
+              <p id="successMsg" class="text-success d-none">Success</p>
+              <p id="existMsg" class="text-warning d-none">
+                Email already exists
+              </p>
+              <button id="btnSignup" class="btn mt-3">Sign Up</button>
+              <p class="lead">
+                You already have an account ! <a href="index.html">Sign In</a>
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 d-none d-md-flex justify-content-center align-items-center image"
+          >
+            <div
+              class="style w-50 h-75 text-start p-3 fs-3 border rounded-4 text-white d-flex align-items-center justify-content-center bg-white"
+            >
+              <div class="img">
+                <img
+                  src="images/undraw_undraw_undraw_undraw_sign_up_ln1s_-1-_s4bc_-1-_ee41_-1-_kf4d.svg"
+                  class="w-100"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/signUp.js"></script>
+  </body>
+</html>
