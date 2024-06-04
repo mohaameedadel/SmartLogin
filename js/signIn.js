@@ -5,6 +5,8 @@ var btnSignin = document.getElementById("btnSignin");
 var alertMsg = document.getElementById("alertMsg");
 var successMsg = document.getElementById("successMsg");
 var existMsg = document.getElementById("existMsg");
+var passErrorMsg = document.getElementById("passErrorMsg");
+
 var users = [];
 
 if (localStorage.getItem("users")) {
@@ -18,7 +20,9 @@ document.addEventListener("keydown", function (e) {
       toastr.error("All inputs is required");
     } else {
       alertMsg.classList.add("d-none");
-      if (validation(userMail) && validation(userPass)) getData();
+      if (validation(userMail) && validation(userPass)) {
+        getData();
+      }
     }
   }
 });
@@ -29,7 +33,9 @@ btnSignin.addEventListener("click", function () {
     toastr.error("All inputs is required");
   } else {
     alertMsg.classList.add("d-none");
-    if (validation(userMail) && validation(userPass)) getData();
+    if (validation(userMail) && validation(userPass)) {
+      getData();
+    }
   }
 });
 
@@ -40,11 +46,17 @@ function getData() {
   };
 
   var check = false;
+  var passCheck = false;
 
   for (var i = 0; i < users.length; i++) {
     if (userData.mail == users[i].mail && userData.pass == users[i].pass) {
       var userName = users[i].name;
       check = true;
+    } else if (
+      userData.mail == users[i].mail &&
+      userData.pass != users[i].pass
+    ) {
+      passCheck = true;
     }
   }
 
@@ -58,9 +70,12 @@ function getData() {
       localStorage.setItem("userName", `${userName}`);
       location.href = "./home.html";
     }, 300);
+  } else if (passCheck) {
+    passErrorMsg.classList.remove("d-none");
+    toastr.warning("That was Wrong Password!");
   } else {
     existMsg.classList.remove("d-none");
-    toastr.warning("That was an invalid email or password. Try again!");
+    toastr.warning("That was an invalid email Please SignUP!");
   }
 }
 
@@ -86,4 +101,5 @@ document.addEventListener("input", function (e) {
   successMsg.classList.add("d-none");
   alertMsg.classList.add("d-none");
   existMsg.classList.add("d-none");
+  passErrorMsg.classList.add("d-none");
 });
