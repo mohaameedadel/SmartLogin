@@ -6,6 +6,7 @@ var alertMsg = document.getElementById("alertMsg");
 var successMsg = document.getElementById("successMsg");
 var existMsg = document.getElementById("existMsg");
 var passErrorMsg = document.getElementById("passErrorMsg");
+var eye = document.getElementById("eye");
 
 var users = [];
 
@@ -102,4 +103,15 @@ document.addEventListener("input", function (e) {
   alertMsg.classList.add("d-none");
   existMsg.classList.add("d-none");
   passErrorMsg.classList.add("d-none");
+});
+
+
+eye.addEventListener("click", function () {
+  if (eye.classList.contains("fa-eye")) {
+    eye.classList.replace("fa-eye", "fa-eye-slash");
+    userPass.setAttribute("type", "text")
+  }else{
+    eye.classList.replace("fa-eye-slash","fa-eye");
+    userPass.setAttribute("type", "password")
+  }
 });
