@@ -97,3 +97,8 @@
 .toast-warning{
   background-color: var(--bs-warning);
 }
+
+#eye{
+  top: 22px;
+  right: 35px;
+}
